@@ -66,7 +66,7 @@ pip install transformers torch accelerate
 ### 3. Prepare Sample Data
 Ensure qa_event_subset.jsonl is located inside the sample_data/ directory or the root project folder.
 
---
+---
 
 ## 🧪 Run the Application
 
@@ -79,7 +79,7 @@ Enter a natural language question like:
 "Was insulin prescribed during the stay?"
 Or type list to see all known Q&A for the patient.
 
---
+---
 
 ## 🧩 Improvements Over Original LLEMR
 
@@ -90,7 +90,7 @@ Matching Logic	Direct Q→A lookups	Semantic matching using key-term overlap
 Time-sensitive Queries	Not handled	Supports filtering by timestamp within prompts
 Deployment	Heavy compute required	Lightweight, laptop-compatible
 
---
+---
 
 ## 📂 File Structure
 
@@ -100,7 +100,7 @@ Deployment	Heavy compute required	Lightweight, laptop-compatible
 ├── README.md                   # Project documentation
 ├── requirements.txt            # Python dependencies
 
---
+---
 
 ## 📈 Results
 
@@ -108,7 +108,7 @@ TinyLlama successfully handled 80–90% of test queries with acceptable accuracy
 Time-based and keyword-matched context improved relevance significantly
 Clearly indicated when data was insufficient — aligned with human reasoning
 
---
+---
 
 ## 🙏 Acknowledgements
 
