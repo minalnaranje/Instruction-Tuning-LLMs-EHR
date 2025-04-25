@@ -54,7 +54,60 @@ We enhanced the original LLEMR architecture by introducing **context-aware seman
 
 ### 1. Clone the Repository
 
-```bash
 git clone https://github.com/minalnaranje/Instruction-Tuning-LLMs-EHR.git
 cd Instruction-Tuning-LLMs-EHR
 
+ ### 2. Install Dependencies
+pip install -r requirements.txt
+Alternatively, install individually:
+
+pip install transformers torch accelerate
+
+### 3. Prepare Sample Data
+Ensure qa_event_subset.jsonl is located inside the sample_data/ directory or the root project folder.
+
+## 🧪 Run the Application
+
+Start the Assistant:
+python ehr_assistant.py
+Interactive CLI:
+Type a patient ID (e.g., 110964)
+Enter a natural language question like:
+"What was the lab value at the 12-hour mark?"
+"Was insulin prescribed during the stay?"
+Or type list to see all known Q&A for the patient.
+
+## 🧩 Improvements Over Original LLEMR
+
+Component	Original LLEMR	Our Implementation
+Base Model	Vicuna-7B (Med-tuned)	TinyLlama-1.1B (General-purpose)
+Prompting Style	Basic instruction tuning	Context-aware, event-type-structured prompts
+Matching Logic	Direct Q→A lookups	Semantic matching using key-term overlap
+Time-sensitive Queries	Not handled	Supports filtering by timestamp within prompts
+Deployment	Heavy compute required	Lightweight, laptop-compatible
+
+## 📂 File Structure
+
+├── ehr_assistant.py            # Main assistant script
+├── sample_data/
+│   └── qa_event_subset.jsonl   # EHR-based Q&A data
+├── README.md                   # Project documentation
+├── requirements.txt            # Python dependencies
+
+## 📈 Results
+
+TinyLlama successfully handled 80–90% of test queries with acceptable accuracy
+Time-based and keyword-matched context improved relevance significantly
+Clearly indicated when data was insufficient — aligned with human reasoning
+
+## 🙏 Acknowledgements
+
+The authors of the original LLEMR paper and MIMIC-IV dataset.
+Hugging Face for TinyLlama and Transformers library.
+MIT for maintaining the open-source MIMIC EHR datasets.
+
+## 📘 References
+
+Wu, Z., Dadu, A., Nalls, M., Faghri, F., & Sun, J. (2024). Instruction Tuning Large Language Models to Understand Electronic Health Records. NeurIPS 2024. NeurIPS Link
+GitHub: LLEMR
+Model: TinyLlama-1.1B-Chat-v1.0
