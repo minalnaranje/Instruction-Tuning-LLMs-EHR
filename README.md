@@ -110,7 +110,7 @@ Clearly indicated when data was insufficient — aligned with human reasoning
 
 ---
 
-## 🙏 Acknowledgements
+## Acknowledgements
 
 The authors of the original LLEMR paper and MIMIC-IV dataset.
 Hugging Face for TinyLlama and Transformers library.
